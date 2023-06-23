@@ -13,5 +13,5 @@ def dashboard(request):
     profile = Profile.objects.first()
     if not profile:
         return redirect('home page')
-    games = Game.objects.all()
+    games = Game.objects.all().order_by('id')
     return render(request, 'common/dashboard.html', {'games': games})

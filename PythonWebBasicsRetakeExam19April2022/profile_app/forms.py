@@ -7,6 +7,11 @@ class BaseProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = '__all__'
+        labels = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'profile_picture': 'Profile Picture',
+        }
 
 
 class CreateProfileForm(BaseProfileForm):
@@ -15,3 +20,7 @@ class CreateProfileForm(BaseProfileForm):
         widgets = {
             'password': forms.PasswordInput()
         }
+
+
+class EditProfileForm(BaseProfileForm):
+    pass
